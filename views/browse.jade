@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1 Browse through your contacts
+
+  .page-content
+    div.table-responsive
+      table.table.table-striped
+        thead
+          tr
+            td
+            td
+            td(style='width: 40%;') First Name
+            td(style='width: 30%;') Last Name
+            td(style='width: 10%;') Address
+            td
+        tbody
+          each product in products
+            tr
+              td
+                input(type='checkbox', data-id=product.id, class = 'checkMultiple')
+              +getId(product)
+              td=user.firstName
+              td=user.lastName
+              td=user.streetAddress
+              td=a.products-delete(href='#', data-id=product.id) Delete

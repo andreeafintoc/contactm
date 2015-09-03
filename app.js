@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
-var routes = require('./routes/index');
+//var routes = require('./routes/index');
 var contact = require('./routes/contact');
 
 var app = express();
@@ -35,8 +35,8 @@ mongoose.connection.on('error', function() {
   console.error('MongoDB Connection Error. Make sure MongoDB is running.');
 });
 
-app.use('/', routes);
-app.use('/contact', contact);
+//app.use('/', routes);
+contact(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

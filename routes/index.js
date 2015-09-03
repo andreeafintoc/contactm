@@ -10,4 +10,8 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Contact Management' });
 });
 
+router.get('/browse', function(req, res, next) {
+  res.render('browse', { title: 'Browse through your contacts' });
+});
+
 module.exports = router;
